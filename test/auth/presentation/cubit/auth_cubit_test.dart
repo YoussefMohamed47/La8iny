@@ -27,7 +27,6 @@ class FakeAuthRepository implements AuthRepo {
     }
   }
 
-  @override
   Future<User> signup(String fullname, String email, String password) {
     final user = User(fullname: fullname, email: email);
     if (_users.contains(user)) {
