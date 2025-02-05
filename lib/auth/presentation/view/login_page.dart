@@ -43,10 +43,10 @@ class _LoginPageState extends State<LoginPage> {
           padding: EdgeInsets.all(16),
           child: BlocListener<AuthCubit, AuthState>(
             listener: (context, state) {
-              if (state.isSuccess) {
+              if (state.isLoaded) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text('Welcome ${state.user?.name ?? ""}'),
+                    content: Text('Welcome ${state.user?.fullname ?? ""}'),
                   ),
                 );
               }

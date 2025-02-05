@@ -1,10 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:la8iny/firebase_options.dart';
 
 import 'auth/presentation/view/login_page.dart';
 import 'core/di/service_locator.dart';
 
-void main() {
+Future<void> main() async {
   initServiceLocator();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
